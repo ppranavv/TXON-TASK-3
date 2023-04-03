@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style3.css">
+        <title>NEW TO DO LIST</title>
+
+    </head>
+    <body>
+
+      <section>
+        <h1>TO DO LIST</h1>
+             <div class="item">
+                <input type="text" class="todo-input" id="todo-input" placeholder="Write your tasks here">
+                <button class="add-button" id="add-button">
+                    <i class="fa-solid fa-circle-plus" ></i>
+                </button>
+            </div>
+            <div>
+                <ul class="todo-container" id="todo-container"></ul>
+            </div>
+        </section>
+
+
+        <script>
+            addButton=document.getElementById("add-button");
+            todocontainer=document.getElementById("todo-container");
+            todoInput=document.getElementById("todo-input");
+        
+            addButton.addEventListener("click", (e) =>{
+        
+                let todo=document.createElement("div");
+                todo.classList.add("todo");
+        
+                let li=document.createElement("li");
+                li.innerText=`${todoInput.value}`;
+                todo.appendChild(li);
+        
+                let checkButton=document.createElement("button");
+                checkButton.innerHTML='<i class="fa-solid fa-check" ></i>';
+                checkButton.classList.add("todo-check");
+                todo.appendChild(checkButton);
+        
+                let deleteButton=document.createElement("button");
+                deleteButton.innerHTML='<i class="fa-solid fa-close" ></i>';
+                deleteButton.classList.add("todo-delete");
+                todo.appendChild(deleteButton);
+        
+                if(todoInput.value===""){
+                    alert("Please enter some text");
+                }
+                else{
+                    todocontainer.appendChild(todo);
+                }
+                todoInput.value="";
+        
+            });
+        
+            todocontainer.addEventListener("click", (e) =>{
+                let target=e.target;
+                if(target.classList.contains("todo-delete")) {
+                    let item=target.parentElement;
+                    item.remove();
+                }
+        
+                if(target.classList.contains("todo-check")) {
+                    let item=target.parentElement;
+                    item.classList.toggle("completed");
+                }
+            })
+        </script>
+
+        
+    </body>
+
+</html>

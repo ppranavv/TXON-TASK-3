@@ -1,0 +1,85 @@
+body{
+    background-image: url(wall3.jfif);
+    background-size :cover ;  
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 90px;
+}
+.item input{
+    height: 27px;
+    width: 250px;
+    margin: 0px;
+    padding: 5px;
+    font-size: 15px;
+}
+.item button{
+    height: 40px;
+    width: 80px;
+    margin: 0px;
+    padding: 5px;
+    background-color:rgb(43, 138, 133);
+    color: black;
+    font-size: 17px;
+    align-items: center;
+}
+h1{
+    font-size: 60px;
+    color: rgb(43, 138, 133);
+    font-style: italic;
+}
+button:hover{
+    background-color: rgb(56, 189, 171);
+}
+.todo-container {
+    width: 320px;
+}
+.todo-container .todo{
+    margin-bottom: 12px;
+    display: flex;
+    justify-content:flex-start;
+    flex-direction: row;
+    background-color: rgb(233, 229, 229);
+    border-radius: 5px;
+    position: relative;
+    right: 25px;
+}
+.todo-container .todo.completed{
+    text-decoration: line-through;
+    color: #7e7e7e;
+    opacity: 0.5;
+}
+.todo-container button{
+    padding: 5px;
+    height: 43px;
+    width: 50px;
+    margin: 0;
+}
+.todo-container .todo-check{
+    background:rgb(125, 216, 178);
+    color: rgb(6, 116, 15);
+    border-left: 2px solid black;
+    font-size: 16px;
+}
+.todo-container .todo-check:hover{
+    background:rgb(46, 160, 112);
+    color: black;
+}
+.todo-container .todo-delete{
+    background: rgb(228, 130, 50);
+    border-left: 0;
+    font-size: 16px;
+}
+.todo-container .todo-delete:hover{
+    background:rgb(209, 122, 50);
+    color: black;
+}
+.todo-container .todo li{
+    flex:10;
+    padding: 16px;
+    list-style-type: none;
+    margin: 0;
+    line-height: 0.7;
+}
